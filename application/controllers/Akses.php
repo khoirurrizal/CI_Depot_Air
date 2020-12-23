@@ -53,5 +53,43 @@
 			$this->session->sess_destroy();
 			redirect(base_url('akses/'));
 		}
+
+		public function custom()
+		{
+			$data['folder'] = "akses/";
+			$data['title'] = "Form Login";
+			if (isset($this->session->userdata['level_user'])) {
+				if($this->session->userdata['level_user']=="owner" || $this->session->userdata['level_user']=="karyawan"){
+					// echo "owner dan karyawan";	
+					redirect('beranda/p/');				
+				}else{
+					redirect('home/p/');				
+				}
+			}else{
+				$this->load->view('akses/login1',$data);
+			}
+		}
+
+		public function login1()
+		{
+			$phone_number = $this->input->post('phone_number');
+			$password = base64_encode($this->input->post('password'));
+			$qr = $this->modelakses->qrl($phone_number,$password);
+			$row = $qr->row_array();
+			if($row){
+				$data = [
+					'id_konsumen' => $row['id_konsumen'],
+					'nama_konsumen' => $row['nama_konsumen'],
+					'no_hp_konsumen' => $row['no_hp_konsumen']
+				];
+				$this->session->set_userdata($data);
+				
+					redirect('home/p/');		
+				
+			}else{
+				redirect(base_url('akses/custom'));
+			}
+		}
+
 	}
  ?>

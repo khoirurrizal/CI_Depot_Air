@@ -14,13 +14,13 @@
 			$this->load->view('home/index',$data);
 		}
 		public function sukses($id_product){
-			$data['user'] = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row_array();
+			$data['konsumen'] = $this->db->get_where('tb_konsumen', ['nama_konsumen' => $this->session->userdata('nama_konsumen')])->row_array();
 			$data['product'] = $this->db->get_where('tb_product', ['id_product' => $id_product])->row_array();
 			$this->load->view('home/suksesbeli',$data);
 		}
 		public function send_transaction(){
 			$data=[
-				'id_user' => $this->input->post('id_user'),
+				'id_user' => $this->input->post('id_konsumen'),
 				'id_product' => $this->input->post('id_product'),
 				'amount' => $this->input->post('total_harga'),
 				'jumlah_beli' => $this->input->post('total_beli'),

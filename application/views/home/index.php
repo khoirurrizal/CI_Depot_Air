@@ -157,8 +157,8 @@
                                 <div class="co collapsible-header">Nama: <?= $tb_product['name_product'] ?></div>
                                 <input type="hidden" name="id_product" id="id_product"
                                     value="<?= $tb_product['id_product'] ?>">
-                                <input type="hidden" name="id_user" id="id_user"
-                                    value="<?= $this->session->userdata['id_user']?>">
+                                <input type="hidden" name="id_konsumen" id="id_konsumen"
+                                    value="<?= $this->session->userdata['id_konsumen']?>">
                                 <input type="hidden" name="amount" id="amount"
                                     value="<?= $tb_product['selling_price'] ?>">
 

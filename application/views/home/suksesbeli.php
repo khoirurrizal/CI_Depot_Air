@@ -60,16 +60,16 @@
                         </span>
                         <div class="row">
                             <div class="input-field col s6">
-                                <input placeholder="username" id="username" type="text" class="validate"
-                                    value="<?php echo $user['username'] ?>" disabled>
-                                <label for="username" class="text-darken-4">Nama</label>
-                                <input placeholder="id_user" id="id_user" name="id_user" type="text"
-                                    value="<?php echo $user['id_user'] ?>" class="validate" hidden>
+                                <input placeholder="nama_konsumen" id="nama_konsumen" type="text" class="validate"
+                                    value="<?php echo $konsumen['nama_konsumen'] ?>" disabled>
+                                <label for="nama_konsumen" class="text-darken-4">Nama</label>
+                                <input placeholder="id_konsumen" id="id_konsumen" name="id_konsumen" type="text"
+                                    value="<?php echo $konsumen['id_konsumen'] ?>" class="validate" hidden>
                             </div>
                             <div class="input-field col s6">
-                                <input placeholder="address" id="address" type="text"
-                                    value="<?php echo $user['address'] ?>" class="validate" disabled>
-                                <label for="address">Alamat Pengiriman</label>
+                                <input placeholder="alamat_konsumen" id="alamat_konsumen" type="text"
+                                    value="<?php echo $konsumen['alamat_konsumen'] ?>" class="validate" disabled>
+                                <label for="alamat_konsumen">Alamat Pengiriman</label>
                             </div>
                         </div>
                         <div class="row">
